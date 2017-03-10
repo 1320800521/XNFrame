@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'XNFrame' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for XNFrame
+pod ‘deblocking’,'~>1.0.0'
+pod 'MBProgressHUD', '~> 0.8'
+pod 'AFNetworking','~> 3.0.0‘ 
+	
+
+  target 'XNFrameTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'XNFrameUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
