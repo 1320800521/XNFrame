@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XNBasViewController : UIViewController
+@interface XNBaseViewController : UIViewController
 
 - (void)shouHubMessage:(NSString *)message;
 

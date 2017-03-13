@@ -36,6 +36,13 @@ static NSMutableDictionary *XN_PublicParam = nil;
     return network;
 }
 
+
+/**
+配置公共参数
+
+ @param dict 公共参数
+ @return 公共参数
+ */
 + (NSDictionary *)configerPubPram:(NSDictionary *)dict{
     if (!XN_PublicParam && dict) {
         XN_PublicParam = [NSMutableDictionary dictionary];
@@ -129,14 +136,146 @@ static NSMutableDictionary *XN_PublicParam = nil;
     }];
 }
 
+
+/**
+ 上传图片
+
+ @param url 上传图片地址
+ @param params 参数
+ @param image 图片
+ @param requestBlock 请求回调
+ */
 + (void)onLoadImageByUrl:(NSString *)url Params:(NSDictionary *)params image:(UIImage *)image requestBlock:(RequestBlock)requestBlock{
 
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict addEntriesFromDictionary:params];
     [dict addEntriesFromDictionary:XN_PublicParam];
     
-    NSData *date = UIImageJPEGRepresentation(image, 1);
+    // 图片压缩比
+    NSData *data = UIImageJPEGRepresentation(image, 1);
     
+    [XN_Manager POST:url parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+         [formData appendPartWithFileData:data name:@"avatar" fileName:@"avatar.jpeg" mimeType:@"image/jpeg"];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (responseObject) {
+            NSLog(@" get 请求 ---- %@",responseObject);
+            
+            // 在这里添加处理
+            
+            if (requestBlock) {
+                requestBlock(responseObject,nil);
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (requestBlock) {
+            requestBlock(nil,error);
+        }
+    }];
+    
+}
+
+/**
+ 文件上传
+
+ @param url 参数
+ @param params 参数
+ @param file 需要上传的文件
+ @param requestBlock 请求回调
+ */
++ (void)onLoadFileByUrl:(NSString *)url Params:(NSDictionary *)params File:(NSString *)file requestBlock:(RequestBlock)requestBlock{
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict addEntriesFromDictionary:params];
+    [dict addEntriesFromDictionary:XN_PublicParam];
+    
+    [XN_Manager POST:url parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+            [formData appendPartWithFileURL:[NSURL URLWithString:file] name:@"file" error:nil];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        if (uploadProgress) {
+            
+        }
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (responseObject) {
+            NSLog(@" get 请求 ---- %@",responseObject);
+            
+            // 在这里添加处理
+            
+            if (requestBlock) {
+                requestBlock(responseObject,nil);
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (requestBlock) {
+            requestBlock(nil,error);
+        }
+    }];
+    
+}
+
+/**
+ 文件下载
+
+ @param url 下载地址
+ @param params 参数
+ @param savePath 下载文件保存路径
+ @param requestBlock 请求回调
+ */
++ (void)downloadFileByUrl:(NSString *)url Params:(NSDictionary *)params savePath:(NSString *)savePath requestBlock:(RequestBlock)requestBlock{
+    
+    AFHTTPRequestSerializer *serializer = [AFHTTPRequestSerializer serializer];
+    NSMutableURLRequest *request =[serializer requestWithMethod:@"GET" URLString:url parameters:XN_PublicParam error:nil];
+    
+    NSURLSessionDownloadTask *task = [[AFHTTPSessionManager manager] downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        
+        NSString *cacheDir = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+        NSString *path = [cacheDir stringByAppendingPathComponent:savePath ];
+        NSURL *fileURL = [NSURL fileURLWithPath:path];
+        
+        return fileURL;
+
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        if (requestBlock) {
+            if (error) {
+                requestBlock(nil,error);
+            }else{
+                requestBlock(filePath,nil);
+            }
+        }
+    }];
+    
+    [task resume];
+}
+
+/**
+ 网络监视
+ */
++ (void)AFNetworkStatus{
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        //这里是监测到网络改变的block  可以写成switch方便
+        //在里面可以随便写事件
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"未知网络状态");
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                NSLog(@"无网络");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"2G/3G/4G");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"WiFi网络");
+                break;
+            default:
+                break;
+        }
+        
+    }] ;
 }
 
 @end

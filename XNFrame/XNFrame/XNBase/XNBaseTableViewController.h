@@ -6,8 +6,8 @@
 //  Copyright © 2017年 小鸟. All rights reserved.
 //
 
-#import "XNBasViewController.h"
+#import "XNBaseViewController.h"
 
-@interface XNBaseTableViewController : XNBasViewController
+@interface XNBaseTableViewController : XNBaseViewController
 
 @end

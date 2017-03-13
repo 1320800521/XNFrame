@@ -6,7 +6,7 @@
 //  Copyright © 2017年 小鸟. All rights reserved.
 //
 
-#import "XNBasViewController.h"
+#import "XNBaseViewController.h"
 #import <MBProgressHUD.h>
 #import <tgmath.h>
 
@@ -20,11 +20,11 @@
 
 #define MBMainThreadAssert() NSAssert([NSThread isMainThread], @"MBProgressHUD needs to be accessed on the main thread.");
 
-@interface XNBasViewController ()
+@interface XNBaseViewController ()
 
 @end
 
-@implementation XNBasViewController
+@implementation XNBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

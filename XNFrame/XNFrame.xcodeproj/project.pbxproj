@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1CFEEBEB5ED81C66B73C49B7 /* libPods-XNFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04CC070D500164B00AE5BC /* libPods-XNFrame.a */; };
-		8B5EB41C1E7258B300E9DBD8 /* XNBasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5EB41B1E7258B300E9DBD8 /* XNBasViewController.m */; };
+		8B02DA531E766F660003E91F /* XNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02DA511E766F660003E91F /* XNLoginViewController.m */; };
+		8B02DA541E766F660003E91F /* XNLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B02DA521E766F660003E91F /* XNLoginViewController.xib */; };
+		8B02DA581E767F340003E91F /* XNTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02DA571E767F340003E91F /* XNTool.m */; };
+		8B02DA5C1E76827D0003E91F /* XNRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02DA5A1E76827D0003E91F /* XNRegistViewController.m */; };
+		8B02DA5D1E76827D0003E91F /* XNRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B02DA5B1E76827D0003E91F /* XNRegistViewController.xib */; };
+		8B02DA611E769D3F0003E91F /* XNFindPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02DA5F1E769D3F0003E91F /* XNFindPwdViewController.m */; };
+		8B02DA621E769D3F0003E91F /* XNFindPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B02DA601E769D3F0003E91F /* XNFindPwdViewController.xib */; };
+		8B5EB41C1E7258B300E9DBD8 /* XNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5EB41B1E7258B300E9DBD8 /* XNBaseViewController.m */; };
 		8B5EB41F1E72595400E9DBD8 /* XNBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5EB41E1E72595400E9DBD8 /* XNBaseTableViewController.m */; };
 		8B5EB4221E7288DE00E9DBD8 /* XNNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5EB4211E7288DE00E9DBD8 /* XNNetwork.m */; };
 		8BE074711E715CCE004E258C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE074701E715CCE004E258C /* main.m */; };
@@ -49,8 +56,19 @@
 		3588D0AB9CD3B0CB2BD250DF /* libPods-XNFrameTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XNFrameTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E04CC070D500164B00AE5BC /* libPods-XNFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XNFrame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F32490616DEAB608322AC82 /* Pods-XNFrameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNFrameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XNFrameTests/Pods-XNFrameTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8B5EB41A1E7258B300E9DBD8 /* XNBasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBasViewController.h; sourceTree = "<group>"; };
-		8B5EB41B1E7258B300E9DBD8 /* XNBasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBasViewController.m; sourceTree = "<group>"; };
+		8B02DA501E766F660003E91F /* XNLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNLoginViewController.h; sourceTree = "<group>"; };
+		8B02DA511E766F660003E91F /* XNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNLoginViewController.m; sourceTree = "<group>"; };
+		8B02DA521E766F660003E91F /* XNLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNLoginViewController.xib; sourceTree = "<group>"; };
+		8B02DA561E767F340003E91F /* XNTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNTool.h; sourceTree = "<group>"; };
+		8B02DA571E767F340003E91F /* XNTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNTool.m; sourceTree = "<group>"; };
+		8B02DA591E76827D0003E91F /* XNRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNRegistViewController.h; sourceTree = "<group>"; };
+		8B02DA5A1E76827D0003E91F /* XNRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNRegistViewController.m; sourceTree = "<group>"; };
+		8B02DA5B1E76827D0003E91F /* XNRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNRegistViewController.xib; sourceTree = "<group>"; };
+		8B02DA5E1E769D3F0003E91F /* XNFindPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNFindPwdViewController.h; sourceTree = "<group>"; };
+		8B02DA5F1E769D3F0003E91F /* XNFindPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNFindPwdViewController.m; sourceTree = "<group>"; };
+		8B02DA601E769D3F0003E91F /* XNFindPwdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNFindPwdViewController.xib; sourceTree = "<group>"; };
+		8B5EB41A1E7258B300E9DBD8 /* XNBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseViewController.h; sourceTree = "<group>"; };
+		8B5EB41B1E7258B300E9DBD8 /* XNBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseViewController.m; sourceTree = "<group>"; };
 		8B5EB41D1E72595400E9DBD8 /* XNBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseTableViewController.h; sourceTree = "<group>"; };
 		8B5EB41E1E72595400E9DBD8 /* XNBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseTableViewController.m; sourceTree = "<group>"; };
 		8B5EB4201E7288DE00E9DBD8 /* XNNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNNetwork.h; sourceTree = "<group>"; };
@@ -130,6 +148,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8B02DA551E767F140003E91F /* XNCommMethod */ = {
+			isa = PBXGroup;
+			children = (
+				8B02DA561E767F340003E91F /* XNTool.h */,
+				8B02DA571E767F340003E91F /* XNTool.m */,
+			);
+			path = XNCommMethod;
+			sourceTree = "<group>";
+		};
 		8B5EB4161E72460300E9DBD8 /* XNCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +167,15 @@
 		8B5EB4171E72460300E9DBD8 /* XNLoginAndRegist */ = {
 			isa = PBXGroup;
 			children = (
+				8B02DA501E766F660003E91F /* XNLoginViewController.h */,
+				8B02DA511E766F660003E91F /* XNLoginViewController.m */,
+				8B02DA521E766F660003E91F /* XNLoginViewController.xib */,
+				8B02DA591E76827D0003E91F /* XNRegistViewController.h */,
+				8B02DA5A1E76827D0003E91F /* XNRegistViewController.m */,
+				8B02DA5B1E76827D0003E91F /* XNRegistViewController.xib */,
+				8B02DA5E1E769D3F0003E91F /* XNFindPwdViewController.h */,
+				8B02DA5F1E769D3F0003E91F /* XNFindPwdViewController.m */,
+				8B02DA601E769D3F0003E91F /* XNFindPwdViewController.xib */,
 			);
 			path = XNLoginAndRegist;
 			sourceTree = "<group>";
@@ -156,8 +192,8 @@
 		8B5EB4191E72588D00E9DBD8 /* XNBase */ = {
 			isa = PBXGroup;
 			children = (
-				8B5EB41A1E7258B300E9DBD8 /* XNBasViewController.h */,
-				8B5EB41B1E7258B300E9DBD8 /* XNBasViewController.m */,
+				8B5EB41A1E7258B300E9DBD8 /* XNBaseViewController.h */,
+				8B5EB41B1E7258B300E9DBD8 /* XNBaseViewController.m */,
 				8B5EB41D1E72595400E9DBD8 /* XNBaseTableViewController.h */,
 				8B5EB41E1E72595400E9DBD8 /* XNBaseTableViewController.m */,
 			);
@@ -189,6 +225,7 @@
 		8BE0746E1E715CCE004E258C /* XNFrame */ = {
 			isa = PBXGroup;
 			children = (
+				8B02DA551E767F140003E91F /* XNCommMethod */,
 				8B5EB4191E72588D00E9DBD8 /* XNBase */,
 				8B5EB4161E72460300E9DBD8 /* XNCategory */,
 				8B5EB4171E72460300E9DBD8 /* XNLoginAndRegist */,
@@ -351,7 +388,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B02DA5D1E76827D0003E91F /* XNRegistViewController.xib in Resources */,
+				8B02DA541E766F660003E91F /* XNLoginViewController.xib in Resources */,
 				8BE074821E715CCF004E258C /* LaunchScreen.storyboard in Resources */,
+				8B02DA621E769D3F0003E91F /* XNFindPwdViewController.xib in Resources */,
 				8BE0747F1E715CCF004E258C /* Assets.xcassets in Resources */,
 				8BE0747A1E715CCE004E258C /* Main.storyboard in Resources */,
 			);
@@ -517,10 +557,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BE074771E715CCE004E258C /* ViewController.m in Sources */,
+				8B02DA611E769D3F0003E91F /* XNFindPwdViewController.m in Sources */,
+				8B02DA581E767F340003E91F /* XNTool.m in Sources */,
 				8BE0747D1E715CCF004E258C /* XNFrame.xcdatamodeld in Sources */,
 				8BE074A71E7164E9004E258C /* CoreTelephony.m in Sources */,
-				8B5EB41C1E7258B300E9DBD8 /* XNBasViewController.m in Sources */,
+				8B5EB41C1E7258B300E9DBD8 /* XNBaseViewController.m in Sources */,
+				8B02DA5C1E76827D0003E91F /* XNRegistViewController.m in Sources */,
 				8B5EB41F1E72595400E9DBD8 /* XNBaseTableViewController.m in Sources */,
+				8B02DA531E766F660003E91F /* XNLoginViewController.m in Sources */,
 				8BE074741E715CCE004E258C /* AppDelegate.m in Sources */,
 				8B5EB4221E7288DE00E9DBD8 /* XNNetwork.m in Sources */,
 				8BE074711E715CCE004E258C /* main.m in Sources */,
