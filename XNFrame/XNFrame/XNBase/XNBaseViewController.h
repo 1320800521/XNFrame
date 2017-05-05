@@ -10,6 +10,6 @@
 
 @interface XNBaseViewController : UIViewController
 
-- (void)shouHubMessage:(NSString *)message;
+//- (void)shouHubMessage:(NSString *)message;
 
 @end

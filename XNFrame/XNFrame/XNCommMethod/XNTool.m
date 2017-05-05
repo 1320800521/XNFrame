@@ -7,6 +7,7 @@
 //
 
 #import "XNTool.h"
+#import "XNLoginViewController.h"
 
 @implementation XNTool
 
@@ -105,5 +106,15 @@
         }
     });
     dispatch_resume(_timer);
+}
+
++ (void)judgeLogin{
+
+    NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults]objectForKey:@"userInfo"];
+    
+//    if (!userInfo) {
+        [XNLoginViewController showLogin];
+//    }
+    
 }
 @end

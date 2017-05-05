@@ -7,6 +7,7 @@
 //
 
 #import "XNFindPwdViewController.h"
+#import "XNTool.h"
 
 @interface XNFindPwdViewController ()
 
@@ -42,6 +43,8 @@
  @param sender dianji
  */
 - (IBAction)getVerfic:(id)sender {
+    
+    [XNTool openCountdown:(UIButton *)sender];
 }
 
 
@@ -52,6 +55,12 @@
  @param sender 点击
  */
 - (IBAction)submit:(id)sender {
+    
+    if ([self.verificTextFlid.text length] && [self.pwdTextFlid.text length]) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

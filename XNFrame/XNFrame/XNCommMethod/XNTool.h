@@ -25,4 +25,10 @@
  */
 + (void)openCountdown:(UIButton *)btn;
 
+
+/**
+ 检查登录与否
+ */
++ (void)judgeLogin;
+
 @end

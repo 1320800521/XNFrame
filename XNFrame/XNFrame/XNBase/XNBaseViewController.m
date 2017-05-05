@@ -9,6 +9,8 @@
 #import "XNBaseViewController.h"
 #import <MBProgressHUD.h>
 #import <tgmath.h>
+#import "XNLoginViewController.h"
+#import "XNTool.h"
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_7_0
 #define kCFCoreFoundationVersionNumber_iOS_7_0 847.20
@@ -117,6 +119,14 @@
 //        [self showUsingAnimation:self.useAnimation];
 //    }
 //}
+
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    [XNTool judgeLogin];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -56,7 +56,7 @@ static NSMutableDictionary *XN_PublicParam = nil;
     return XN_PublicParam;
 }
 
-+ (AFHTTPSessionManager *)manager{
++ (AFHTTPSessionManager *)XN_manager{
     
     if (!XN_Manager) {
         XN_Manager = [[AFHTTPSessionManager alloc]initWithBaseURL:[NSURL URLWithString:@""]];

@@ -10,4 +10,6 @@
 
 @interface XNLoginViewController : XNBaseViewController
 
++ (void)showLogin;
+
 @end

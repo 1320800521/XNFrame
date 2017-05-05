@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import <CoreTelephony/CTCallCenter.h>
-#import <CoreLocation/CoreLocation.h>
-
+#import "XNNavViewController.h"
+#import "XNRootViewController.h"
+#import "XNTabbBarViewController.h"
+#import "XNLaunchAD.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    XNTabbBarViewController *tab = [[XNTabbBarViewController alloc]init];
+    
+    
+    XNRootViewController *rootVC = [[XNRootViewController alloc]init];
+    
+    XNNavViewController *nav1 = [[XNNavViewController alloc]initWithRootViewController:rootVC];
+//    nav1.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"首页" image:[UIImage imageNamed:@""] tag:0];
+//    nav1.title = @"首页";
+    
+//    XNNavViewController *nav2 = [[XNNavViewController alloc]initWithRootViewController:rootVC];
+//    nav2.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"信息" image:[UIImage imageNamed:@""] tag:0];
+//    nav2.title = @"信息";
+//    
+//    tab.viewControllers = @[nav1,nav2];
+    
+    self.window.rootViewController = nav1;
+    
+    
+    [self.window makeKeyAndVisible];
+    
+    XNLaunchAD *launch = [XNLaunchAD shareInstLanuchAD];
+    
+    [launch downloadAD:@"http://ohnzw6ag6.bkt.clouddn.com/video0.mp4"];
+    
+    
+    
     return YES;
 }
 
